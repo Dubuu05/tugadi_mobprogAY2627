@@ -15,16 +15,17 @@ class NewsFeedScreen extends StatelessWidget {
           numOfLikes: 100,
           date: 'November 11',
           avatarUrl: 'https://i.pravatar.cc/150?img=12',
+          postImageUrl: 'https://picsum.photos/800/500',
         ),
 
         NewsFeedCard(
           userName: 'ABS-CBN News',
-          postContent: 'POP-P NAGMANEHO NG HINDI HAWAK ANG MANIBELA',
+          postContent: 'P-POP NAGMANEHO NG HINDI HAWAK ANG MANIBELA',
           numOfLikes: 1000,
           date: 'November 11',
           isAbsCbn: true,
           avatarUrl: 'https://logo.clearbit.com/abs-cbn.com',
-          postImageUrl: 'https://logo.clearbit.com/abs-cbn.com',
+          postImageUrl: 'https://picsum.photos/800/501',
         ),
       ],
     );
