@@ -12,7 +12,7 @@ I used a list and ListView.builder to display posts dynamically. Each post has i
 
 Enhancements
 
-I completed all five enhancements: dynamic posts, dynamic AppBar title, additional bottom navigation items, changing the app name to Yapbook, and updating the color palette in constants.dart.
+I completed all five enhancements: dynamic posts, dynamic AppBar title, additional bottom navigation items, changing the app name to Chikahan, and updating the color palette in constants.dart.
 
 Challenges and Solutions        
 
