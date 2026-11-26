@@ -2,9 +2,9 @@
 # 2024-1008351
 # INF241
 
-Laboratory 0: Discussion
-Laboratory 1: Discussion
-Laboratory 2: Discussion
+# Laboratory 0: Discussion
+# Laboratory 1: Discussion
+# Laboratory 2: Discussion
 
 Managing Posts and Notifications
 
