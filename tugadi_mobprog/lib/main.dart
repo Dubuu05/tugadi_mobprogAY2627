@@ -20,7 +20,7 @@ class RoblesFacebook extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Facebook Replication',
+          title: 'Chikahan',
           initialRoute: '/home',
           routes: {
             '/home': (context) => const HomeScreen(),

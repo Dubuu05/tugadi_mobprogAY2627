@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants.dart';
 import '../screens/newsfeed_screen.dart';
+import '../screens/notification_screen.dart';
 import '../widgets/custom_text.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,12 +21,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // App Bar
       appBar: AppBar(
         shadowColor: fbTextColorWhite,
         elevation: 2,
         title: CustomText(
-          text: 'facebook',
+          text: [
+            'Chikahan',
+            'Friends',
+            'Notifications',
+            'Profile',
+          ][selectedIndex],
           fontSize: ScreenUtil().setSp(25),
           color: fbPrimary,
           fontFamily: 'Roboto',
@@ -33,12 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
-      // Page View
       body: PageView(
         controller: _pageController,
         children: const <Widget>[
           NewsFeedScreen(),
-          Center(child: Text('Notifications')),
+          Center(child: Text('Friends')),
+          NotificationScreen(),
+          Center(child: Text('Profile')),
         ],
         onPageChanged: (page) {
           setState(() {
@@ -47,25 +53,41 @@ class _HomeScreenState extends State<HomeScreen> {
         },
       ),
 
-      // Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.white,
+        currentIndex: selectedIndex,
+        selectedItemColor: fbPrimary,
+        unselectedItemColor: Colors.grey,
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: fbPrimary,
-        currentIndex: selectedIndex,
         onTap: onTappedBar,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.people_outline),
+            activeIcon: Icon(Icons.people),
+            label: 'Friends',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications_none),
+            activeIcon: Icon(Icons.notifications),
             label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            activeIcon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
       ),
     );
   }
 
-  // Bottom Navigation Bar Function
   void onTappedBar(int value) {
     setState(() {
       selectedIndex = value;

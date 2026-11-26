@@ -7,27 +7,43 @@ class NewsFeedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: const [
-        NewsFeedCard(
-          userName: 'Jerome Tugadi',
-          postContent: 'Pantrapiko',
-          numOfLikes: 100,
-          date: 'November 11',
-          avatarUrl: 'https://i.pravatar.cc/150?img=12',
-          postImageUrl: 'https://picsum.photos/800/500',
-        ),
+    // Dynamic Post Data
+    final List<Map<String, dynamic>> posts = [
+      {
+        'userName': 'Jerome Tugadi',
+        'postContent': 'Pantrapiko',
+        'numOfLikes': 100,
+        'date': 'November 11',
+        'avatarUrl': 'https://i.pravatar.cc/150?img=12',
+        'postImageUrl': 'https://picsum.photos/800/500',
+        'isAbsCbn': false,
+      },
+      {
+        'userName': 'ABS-CBN News',
+        'postContent': 'P-POP NAGMANEHO NG HINDI HAWAK ANG MANIBELA',
+        'numOfLikes': 1000,
+        'date': 'November 11',
+        'avatarUrl': 'https://logo.clearbit.com/abs-cbn.com',
+        'postImageUrl': 'https://picsum.photos/800/501',
+        'isAbsCbn': true,
+      },
+    ];
 
-        NewsFeedCard(
-          userName: 'ABS-CBN News',
-          postContent: 'P-POP NAGMANEHO NG HINDI HAWAK ANG MANIBELA',
-          numOfLikes: 1000,
-          date: 'November 11',
-          isAbsCbn: true,
-          avatarUrl: 'https://logo.clearbit.com/abs-cbn.com',
-          postImageUrl: 'https://picsum.photos/800/501',
-        ),
-      ],
+    return ListView.builder(
+      itemCount: posts.length,
+      itemBuilder: (context, index) {
+        final post = posts[index];
+
+        return NewsFeedCard(
+          userName: post['userName'],
+          postContent: post['postContent'],
+          numOfLikes: post['numOfLikes'],
+          date: post['date'],
+          avatarUrl: post['avatarUrl'],
+          postImageUrl: post['postImageUrl'],
+          isAbsCbn: post['isAbsCbn'],
+        );
+      },
     );
   }
 }
