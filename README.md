@@ -7,8 +7,6 @@
 
 ## Laboratory 1: Discussion
 
----
-
 ## Laboratory 2: Discussion
 
 ### Managing Posts and Notifications
